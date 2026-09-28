@@ -1,6 +1,6 @@
 package com.stephanie.agendadortarefas.infrastructure.security;
 
-import com.stephanie.agendadortarefas.business.dto.UsuarioDTO;
+import com.stephanie.agendadortarefas.business.dto.UsuarioDTORecord;
 import com.stephanie.agendadortarefas.infrastructure.security.Client.UsuarioClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -15,10 +15,10 @@ public class UserDetailsServiceImpl {
 
        public UserDetails carrregaDadosUsuario(String email, String token){
 
-        UsuarioDTO usuarioDTO = client.buscaUsuarioPorEmail(email, token);
+        UsuarioDTORecord usuarioDTO = client.buscaUsuarioPorEmail(email, token);
         return User
-                .withUsername(usuarioDTO.getEmail()) // Define o nome de usuário como o e-mail
-                .password(usuarioDTO.getSenha()) // Define a senha do usuário
+                .withUsername(usuarioDTO.email()) // Define o nome de usuário como o e-mail
+                .password(usuarioDTO.senha()) // Define a senha do usuário
                 .build(); // Constrói o objeto UserDetails
     }
 }

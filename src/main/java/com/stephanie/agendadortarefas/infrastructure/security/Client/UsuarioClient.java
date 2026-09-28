@@ -1,8 +1,7 @@
 package com.stephanie.agendadortarefas.infrastructure.security.Client;
 
-import com.stephanie.agendadortarefas.business.dto.UsuarioDTO;
+import com.stephanie.agendadortarefas.business.dto.UsuarioDTORecord;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
